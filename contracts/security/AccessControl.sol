@@ -13,7 +13,7 @@ abstract contract AccessControl is Context {
     address public minter;
     address public ceo;
     address public manager;
-
+    
     constructor() {
         admin = _msgSender();
         minter = _msgSender();
@@ -36,6 +36,14 @@ abstract contract AccessControl is Context {
 
     modifier onlyManager() {
         require(_msgSender() == manager);
+        _;
+    }
+
+    modifier onlyAdminOrCEO() {
+        require(
+            _msgSender() == admin || 
+            _msgSender() == ceo
+        );
         _;
     }
 
@@ -68,21 +76,4 @@ abstract contract AccessControl is Context {
         require(_newManager != address(0));
         manager = _newManager;
     }
-
-    function currentAdmin() public view returns (address) {
-        return admin;
-    }
-
-    function currentMinter() public view returns (address) {
-        return minter;
-    }
-
-    function currentCEO() public view returns (address) {
-        return ceo;
-    }
-
-    function currentManager() public view returns (address) {
-        return manager;
-    }
-
 }

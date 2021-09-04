@@ -26,9 +26,9 @@ import "../security/Ownable.sol";
 
 contract BEP20 is Context, IBEP20, IBEP20Metadata, Ownable {
 
-    mapping(address => uint256) private _balances;
+    mapping(address => uint256) internal _balances;
     
-    mapping(address => mapping(address => uint256)) private _allowances;
+    mapping(address => mapping(address => uint256)) internal _allowances;
 
     uint256 private _totalSupply;
 
@@ -52,7 +52,7 @@ contract BEP20 is Context, IBEP20, IBEP20Metadata, Ownable {
      }
 
      /**
-     * @dev Returns the token owner.
+     * @dev Returns the token _owner.
      */
      function getOwner() external view virtual override returns (address) {
          return owner();
@@ -111,8 +111,8 @@ contract BEP20 is Context, IBEP20, IBEP20Metadata, Ownable {
         return true;
     }
 
-    function allowance(address owner, address spender) public view virtual override returns (uint256) {
-        return _allowances[owner][spender];
+    function allowance(address _owner, address spender) public view virtual override returns (uint256) {
+        return _allowances[_owner][spender];
     }
 
     /**
@@ -202,18 +202,6 @@ contract BEP20 is Context, IBEP20, IBEP20Metadata, Ownable {
 
         return true;
     }
-    /**
-     * @dev Creates `amount` tokens and assigns them to `msg.sender`, increasing
-     * the total supply.
-     *
-     * Requirements
-     *
-     * - `msg.sender` must be the token owner
-     */
-    function mint(uint256 amount) public virtual onlyOwner returns (bool) {
-        _mint(_msgSender(), amount);
-        return true;
-    }
 
     /**
      * @dev Moves `amount` of tokens from `sender` to `recipient`.
@@ -251,27 +239,6 @@ contract BEP20 is Context, IBEP20, IBEP20Metadata, Ownable {
         _afterTokenTransfer(sender, recipient, amount);
     }
 
-    /** @dev Creates `amount` tokens and assigns them to `account`, increasing
-     * the total supply.
-     *
-     * Emits a {Transfer} event with `from` set to the zero address.
-     *
-     * Requirements:
-     *
-     * - `account` cannot be the zero address.
-     */
-    function _mint(address account, uint256 amount) internal virtual {
-        require(account != address(0), "BEP20: Mint to the zero address");
-
-        _beforeTokenTransfer(address(0), account, amount);
-
-        _totalSupply += amount;
-        _balances[account] += amount;
-        emit Transfer(address(0), account, amount);
-
-        _afterTokenTransfer(address(0), account, amount);
-    }
-
     /**
      * @dev Destroys `amount` tokens from `account`, reducing the
      * total supply.
@@ -301,7 +268,7 @@ contract BEP20 is Context, IBEP20, IBEP20Metadata, Ownable {
     }
 
     /**
-     * @dev Sets `amount` as the allowance of `spender` over the `owner` s tokens.
+     * @dev Sets `amount` as the allowance of `spender` over the `_owner` s tokens.
      *
      * This internal function is equivalent to `approve`, and can be used to
      * e.g. set automatic allowances for certain subsystems, etc.
@@ -310,19 +277,19 @@ contract BEP20 is Context, IBEP20, IBEP20Metadata, Ownable {
      *
      * Requirements:
      *
-     * - `owner` cannot be the zero address.
+     * - `_owner` cannot be the zero address.
      * - `spender` cannot be the zero address.
      */
     function _approve(
-        address owner,
+        address _owner,
         address spender,
         uint256 amount
     ) internal virtual {
-        require(owner != address(0), "BEP20: Approve from the zero address");
+        require(_owner != address(0), "BEP20: Approve from the zero address");
         require(spender != address(0), "BEP20: Approve to the zero address");
 
-        _allowances[owner][spender] = amount;
-        emit Approval(owner, spender, amount);
+        _allowances[_owner][spender] = amount;
+        emit Approval(_owner, spender, amount);
     }
 
     /**

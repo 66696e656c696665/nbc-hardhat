@@ -3,6 +3,7 @@
 pragma solidity ^0.8.6;
 
 import "./Context.sol";
+import "./AccessControl.sol";
 
 /**
  * @dev Contract module which allows children to implement an emergency stop
@@ -13,7 +14,7 @@ import "./Context.sol";
  * the functions of your contract. Note that they will not be pausable by
  * simply including this module, only once the modifiers are put in place.
  */
-abstract contract Pausable is Context {
+abstract contract Pausable is Context, AccessControl {
     /**
      * @dev Emitted when the pause is triggered by `account`.
      */
@@ -35,8 +36,11 @@ abstract contract Pausable is Context {
 
     /**
      * @dev Returns true if the contract is paused, and false otherwise.
+     *
+     * Only callable by admin.
+     *
      */
-    function paused() public view virtual returns (bool) {
+    function paused() public view virtual onlyAdmin returns (bool) {
         return _paused;
     }
 
@@ -67,11 +71,13 @@ abstract contract Pausable is Context {
     /**
      * @dev Triggers stopped state.
      *
+     * Only callable by admin.
+     *
      * Requirements:
      *
      * - The contract must not be paused.
      */
-    function _pause() internal virtual whenNotPaused {
+    function _pause() internal virtual whenNotPaused onlyAdmin {
         _paused = true;
         emit Paused(_msgSender());
     }
@@ -79,11 +85,14 @@ abstract contract Pausable is Context {
     /**
      * @dev Returns to normal state.
      *
+     * Only callable by admin.
+     *
+     *
      * Requirements:
      *
      * - The contract must be paused.
      */
-    function _unpause() internal virtual whenPaused {
+    function _unpause() internal virtual whenPaused onlyAdmin {
         _paused = false;
         emit Unpaused(_msgSender());
     }
