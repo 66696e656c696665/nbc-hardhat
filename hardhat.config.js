@@ -1,6 +1,9 @@
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-ethers");
 
+const fs = require('fs');
+const privateKey = fs.readFileSync(".secret").toString().trim() || "0123456789";
+
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
@@ -35,7 +38,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
       url: "https://bsc-dataseed.binance.org/",
       chainId: 56,
       gasPrice: 20000000000,
-      accounts: {mnemonic: mnemonic}
+      accounts: [privateKey]
     }
   },
   solidity: {
