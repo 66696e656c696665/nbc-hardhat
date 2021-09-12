@@ -11,12 +11,16 @@ import "./Context.sol";
 abstract contract AccessControl is Context {
     address public admin;
     address public minter;
+    address public burner;
     address public ceo;
     address public manager;
     
     constructor() {
         admin = _msgSender();
         minter = _msgSender();
+        burner = _msgSender();
+        ceo = _msgSender();
+        manager = _msgSender();
     }
 
     modifier onlyAdmin() {
@@ -26,6 +30,11 @@ abstract contract AccessControl is Context {
 
     modifier onlyMinter() {
         require(_msgSender() == minter);
+        _;
+    }
+
+    modifier onlyBurner() {
+        require(_msgSender() == burner);
         _;
     }
 
@@ -51,6 +60,7 @@ abstract contract AccessControl is Context {
         require(
             _msgSender() == admin ||
             _msgSender() == minter ||
+            _msgSender() == burner ||
             _msgSender() == ceo || 
             _msgSender() == manager
         );
@@ -62,9 +72,14 @@ abstract contract AccessControl is Context {
         admin = _newAdmin;
     }
 
-    function newMinter(address _newMinter) public onlyAdmin {
+    function newMinter(address _newMinter) public onlyAdminOrCEO {
         require(_newMinter != address(0));
         minter = _newMinter;
+    }
+
+    function newBurner(address _newBurner) public onlyAdminOrCEO {
+        require(_newBurner != address(0));
+        burner = _newBurner;
     }
 
     function newCEO(address _newCEO) public onlyAdmin {

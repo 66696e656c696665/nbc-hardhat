@@ -12,11 +12,6 @@ interface IBEP20 {
     function totalSupply() external view returns (uint256);
 
     /**
-     * @dev Returns the token owner.
-     */
-    function getOwner() external view returns (address);
-
-    /**
      * @dev Returns the amount of tokens owned by `account`.
      */
     function balanceOf(address account) external view returns (uint256);
@@ -83,4 +78,48 @@ interface IBEP20 {
      * a call to {approve}. `value` is the new allowance.
      */
     event Approval(address indexed owner, address indexed spender, uint256 value);
+
+    /**
+     * @dev Emitted whenever the mint() function is fired. `from` is the caller of the
+     * mint function. `to` refers to the address the tokens are minted to. `value` is the
+     * amount of tokens minted.
+     */
+    event Minted(address indexed from, address indexed to, uint256 value);
+
+    /**
+     * @dev Emitted whenever the burn() function is fired. `by` is the caller of the
+     * burn function. `from` refers to the address the tokens were burnt from. `value` is the
+     * amount of tokens burnt.
+     */
+    event Burnt (address indexed by, address indexed from, uint256 value);
+
+    /**
+     * @dev Resolution for the Multiple Withdrawal Attack on ERC20 Tokens (ISBN:978-1-7281-3027-9)
+     *
+     * @dev Similar to ERC20 Transfer event, but also logs an address which executed transfer
+     *
+     * @dev Fired in transfer(), transferFrom() and some other (non-ERC20) functions
+     *
+     * @param _by an address which performed the transfer
+     * @param _from an address tokens were consumed from
+     * @param _to an address tokens were sent to
+     * @param _value number of tokens transferred
+     */
+    event Transferred(address indexed _by, address indexed _from, address indexed _to, uint256 _value);
+
+     /**
+     * @dev Resolution for the Multiple Withdrawal Attack on ERC20 Tokens (ISBN:978-1-7281-3027-9)
+     *
+     * @dev Similar to ERC20 Approve event, but also logs old approval value
+     *
+     * @dev Fired in approve() and approveAtomic() functions
+     *
+     * @param _owner an address which granted a permission to transfer
+     *      tokens on its behalf
+     * @param _spender an address which received a permission to transfer
+     *      tokens on behalf of the owner `_owner`
+     * @param _oldValue previously granted amount of tokens to transfer on behalf
+     * @param _value new granted amount of tokens to transfer on behalf
+     */
+    event Approved(address indexed _owner, address indexed _spender, uint256 _oldValue, uint256 _value);
 }

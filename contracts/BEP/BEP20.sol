@@ -5,7 +5,8 @@ pragma solidity ^0.8.6;
 import "./IBEP20.sol";
 import "./IBEP20Metadata.sol";
 import "../security/Context.sol";
-import "../security/Ownable.sol";
+import "../security/Address.sol";
+import "../security/AccessControl.sol";
 
 /**
  * @dev Implementation of the {IBEP20} interface.
@@ -24,13 +25,15 @@ import "../security/Ownable.sol";
  * allowances. See {IBEP20-approve}.
  */
 
-contract BEP20 is Context, IBEP20, IBEP20Metadata, Ownable {
+contract BEP20 is Context, IBEP20, IBEP20Metadata, AccessControl {
+    
+    using Address for address;
 
     mapping(address => uint256) internal _balances;
     
     mapping(address => mapping(address => uint256)) internal _allowances;
 
-    uint256 private _totalSupply;
+    uint256 internal _totalSupply;
 
     string private _name;
     string private _symbol;
@@ -50,14 +53,7 @@ contract BEP20 is Context, IBEP20, IBEP20Metadata, Ownable {
          _symbol = symbol_;
          _decimals = 18;
      }
-
-     /**
-     * @dev Returns the token _owner.
-     */
-     function getOwner() external view virtual override returns (address) {
-         return owner();
-     }
-
+     
      /**
      * @dev Returns the name of the token.
      */
@@ -175,6 +171,7 @@ contract BEP20 is Context, IBEP20, IBEP20Metadata, Ownable {
      * - `spender` cannot be the zero address.
      */
     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {
+
         _approve(_msgSender(), spender, _allowances[_msgSender()][spender] + addedValue);
         return true;
     }
@@ -262,6 +259,8 @@ contract BEP20 is Context, IBEP20, IBEP20Metadata, Ownable {
         }
         _totalSupply -= amount;
 
+        emit Burnt(_msgSender(), account, amount);
+        emit Transferred(_msgSender(), account, address(0), amount);
         emit Transfer(account, address(0), amount);
 
         _afterTokenTransfer(account, address(0), amount);
@@ -331,4 +330,28 @@ contract BEP20 is Context, IBEP20, IBEP20Metadata, Ownable {
         address to,
         uint256 amount
     ) internal virtual {}
+
+    /** @dev Creates `amount` tokens and assigns them to `account`, increasing
+     * the total supply.
+     *
+     * Emits a {Transfer} event with `from` set to the zero address.
+     *
+     * Requirements:
+     *
+     * - `account` cannot be the zero address.
+     */
+    function _mint(address account, uint256 amount) internal virtual {
+        require(account != address(0), "BEP20: Mint to the zero address");
+
+        _beforeTokenTransfer(address(0), account, amount);
+
+        _totalSupply += amount;
+        _balances[account] += amount;
+
+        emit Minted(_msgSender(), account, amount);
+        emit Transferred(_msgSender(), address(0), account, amount);
+        emit Transfer(address(0), account, amount);
+
+        _afterTokenTransfer(address(0), account, amount);
+    }
 }
