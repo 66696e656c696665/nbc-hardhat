@@ -1,0 +1,28 @@
+{
+    "sources": {
+        "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP721/BEP721.sol": {
+            "ast": {
+                "absolutePath": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP721/BEP721.sol",
+                "exportedSymbols": {},
+                "id": 2,
+                "license": "MIT",
+                "nodeType": "SourceUnit",
+                "nodes": [
+                    {
+                        "id": 1,
+                        "literals": [
+                            "solidity",
+                            "^",
+                            "0.8",
+                            ".6"
+                        ],
+                        "nodeType": "PragmaDirective",
+                        "src": "34:23:0"
+                    }
+                ],
+                "src": "34:27:0"
+            },
+            "id": 0
+        }
+    }
+}

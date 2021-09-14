@@ -8,7 +8,7 @@ import "../BEP20/SafeBEP20.sol";
 import "../BEP20/IBEP20.sol";
 import "../security/Pausable.sol";
 
-contract Crowdsale is Context, ReentrancyGuard, Pausable {
+abstract contract Crowdsale is Context, ReentrancyGuard, Pausable {
     using SafeBEP20 for IBEP20;
 
     // The token being sold
@@ -26,13 +26,13 @@ contract Crowdsale is Context, ReentrancyGuard, Pausable {
     // Amount of wei raised
     uint256 private _weiRaised;
 
-    // Min amount allowed to purchase per buyer
+    // Min amount a buyer is allowed to purchase
     uint256 private _minPurchase;
 
-    // Max amount allowed to purchase per buyer
+    // Max amount a buyer is allowed to purchase
     uint256 private _maxPurchase;
 
-    // Checks how much a buyer has purchased.
+    // Checks how much a buyer has purchased
     mapping(address => uint256) private purchased;
     /**
      * Event for token purchase logging
