@@ -11,7 +11,7 @@ import "../BEP/BEP20.sol";
  *
  * @dev NBCoin contract with governance implemented
  */
-contract NBCoin is BEP20("NBCoin Test Alpha V3", "NBCab") {
+contract NBCoin is BEP20("NBCoin Beta", "NBCB") {
     uint256 private totalTokens = 100000000 * 10 ** 18;
     uint256 private cap = 130000000 * 10 ** 18;
 
@@ -404,6 +404,6 @@ contract NBCoin is BEP20("NBCoin Test Alpha V3", "NBCab") {
      * @dev Constructor will mint initial 100,000,000 tokens to contract address
      */
     constructor() {
-        _mint(_msgSender(), totalTokens);
+        mint(_msgSender(), totalTokens);
     }
 }
