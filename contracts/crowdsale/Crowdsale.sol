@@ -4,8 +4,8 @@ pragma solidity ^0.8.6;
 
 import "../security/Context.sol";
 import "../security/ReentrancyGuard.sol";
-import "../BEP/SafeBEP20.sol";
-import "../BEP/IBEP20.sol";
+import "../BEP20/SafeBEP20.sol";
+import "../BEP20/IBEP20.sol";
 import "../security/Pausable.sol";
 
 contract Crowdsale is Context, ReentrancyGuard, Pausable {

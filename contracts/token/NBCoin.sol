@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.6;
 
-import "../BEP/BEP20.sol";
+import "../BEP20/BEP20.sol";
 
 /**
  * @dev Total supply starts at 100,000,000 (100 million)

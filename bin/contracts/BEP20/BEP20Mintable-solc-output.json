@@ -1,0 +1,31 @@
+{
+    "errors": [
+        {
+            "component": "general",
+            "errorCode": "3420",
+            "formattedMessage": "Warning: Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.7;\"\n--> c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/BEP20Mintable.sol\n\n",
+            "message": "Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.7;\"",
+            "severity": "warning",
+            "sourceLocation": {
+                "end": -1,
+                "file": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/BEP20Mintable.sol",
+                "start": -1
+            },
+            "type": "Warning"
+        }
+    ],
+    "sources": {
+        "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/BEP20Mintable.sol": {
+            "ast": {
+                "absolutePath": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/BEP20Mintable.sol",
+                "exportedSymbols": {},
+                "id": 1,
+                "license": "MIT",
+                "nodeType": "SourceUnit",
+                "nodes": [],
+                "src": "1429:0:0"
+            },
+            "id": 0
+        }
+    }
+}

@@ -1,0 +1,698 @@
+{
+    "contractName": "Upgradeable",
+    "abi": [
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "ContractUpgraded",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "Paused",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "Unpaused",
+            "type": "event"
+        },
+        {
+            "inputs": [],
+            "name": "admin",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "burner",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "ceo",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "manager",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "minter",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_newAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "newAdmin",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_newBurner",
+                    "type": "address"
+                }
+            ],
+            "name": "newBurner",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_newCEO",
+                    "type": "address"
+                }
+            ],
+            "name": "newCEO",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "newContractAddress",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_newManager",
+                    "type": "address"
+                }
+            ],
+            "name": "newManager",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_newMinter",
+                    "type": "address"
+                }
+            ],
+            "name": "newMinter",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "paused",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "newAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "setNewAddress",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "unpause",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newAddress\",\"type\":\"address\"}],\"name\":\"ContractUpgraded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"admin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"burner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ceo\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"manager\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minter\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"newAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newBurner\",\"type\":\"address\"}],\"name\":\"newBurner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newCEO\",\"type\":\"address\"}],\"name\":\"newCEO\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"newContractAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newManager\",\"type\":\"address\"}],\"name\":\"newManager\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newMinter\",\"type\":\"address\"}],\"name\":\"newMinter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newAddress\",\"type\":\"address\"}],\"name\":\"setNewAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unpause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"paused()\":{\"details\":\"Returns true if the contract is paused, and false otherwise. Only callable by admin.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Upgradeable.sol\":\"Upgradeable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/AccessControl.sol\":{\"keccak256\":\"0x92384730c6625ed87e77336de864d09ecd32f5c81a367daaabfcd9069f768990\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a9d0bd02c62a29872bee594184350ffeab9756510566be1d6cdcc1a141010e0c\",\"dweb:/ipfs/QmQcaAkXGzypJj4ysMRKSaaKYcMUjP1EbAYQS2EsUCbYNW\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Context.sol\":{\"keccak256\":\"0xffc0776ebe4121e520cae8118bc5f413049825f7eed19c10744135162279c425\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://08f6f7e03480e61b4715eeb1e02ded0e57920990389bd3e0cdcd6228fac9a6fa\",\"dweb:/ipfs/QmddKZSX49barLgmP5FpaZ45DaUdPeFfJfkHzo5NnzoNrj\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Pausable.sol\":{\"keccak256\":\"0x949efd6e4bdc0fb825368a0dfdd63d40c3691d44b6ae963197f324a1abaf62e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://652a39dcdd2b7001b00d56bf7350cc81ead70be91d53a42bab0977f115081576\",\"dweb:/ipfs/QmTpfwzCaYDtCW1QyTmRVBFA3nz9VGyQ8PXYrq711RUPXm\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Upgradeable.sol\":{\"keccak256\":\"0x44a01698ed956be921578f350fc6ca3b0e9c607f4fb67cffe36aaf0e446c4371\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c17226554b718824bf2ac4be96156d6b3ddc1c46cd595b039f2d3145b0b3cd79\",\"dweb:/ipfs/QmbwZhSURRZzPjBLzpjsQRSRZsEmrBfg2PStu4nVuUPZXG\"]}},\"version\":1}",
+    "bytecode": "",
+    "deployedBytecode": "",
+    "sourceMap": "",
+    "deployedSourceMap": "",
+    "sourcePath": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Upgradeable.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.7+commit.e28d00a7"
+    },
+    "ast": {
+        "absolutePath": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Upgradeable.sol",
+        "exportedSymbols": {
+            "AccessControl": [
+                252
+            ],
+            "Context": [
+                274
+            ],
+            "Pausable": [
+                375
+            ],
+            "Upgradeable": [
+                418
+            ]
+        },
+        "id": 419,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 377,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.8",
+                    ".6"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "34:23:3"
+            },
+            {
+                "absolutePath": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Pausable.sol",
+                "file": "./Pausable.sol",
+                "id": 378,
+                "nameLocation": "-1:-1:-1",
+                "nodeType": "ImportDirective",
+                "scope": 419,
+                "sourceUnit": 376,
+                "src": "61:24:3",
+                "symbolAliases": [],
+                "unitAlias": ""
+            },
+            {
+                "abstract": true,
+                "baseContracts": [
+                    {
+                        "baseName": {
+                            "id": 379,
+                            "name": "Pausable",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 375,
+                            "src": "122:8:3"
+                        },
+                        "id": 380,
+                        "nodeType": "InheritanceSpecifier",
+                        "src": "122:8:3"
+                    }
+                ],
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "fullyImplemented": true,
+                "id": 418,
+                "linearizedBaseContracts": [
+                    418,
+                    375,
+                    252,
+                    274
+                ],
+                "name": "Upgradeable",
+                "nameLocation": "107:11:3",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "constant": false,
+                        "functionSelector": "6af04a57",
+                        "id": 382,
+                        "mutability": "mutable",
+                        "name": "newContractAddress",
+                        "nameLocation": "153:18:3",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 418,
+                        "src": "138:33:3",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                        },
+                        "typeName": {
+                            "id": 381,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "138:7:3",
+                            "stateMutability": "nonpayable",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                            }
+                        },
+                        "visibility": "public"
+                    },
+                    {
+                        "anonymous": false,
+                        "id": 386,
+                        "name": "ContractUpgraded",
+                        "nameLocation": "186:16:3",
+                        "nodeType": "EventDefinition",
+                        "parameters": {
+                            "id": 385,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 384,
+                                    "indexed": false,
+                                    "mutability": "mutable",
+                                    "name": "newAddress",
+                                    "nameLocation": "211:10:3",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 386,
+                                    "src": "203:18:3",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    },
+                                    "typeName": {
+                                        "id": 383,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "203:7:3",
+                                        "stateMutability": "nonpayable",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "202:20:3"
+                        },
+                        "src": "180:43:3"
+                    },
+                    {
+                        "body": {
+                            "id": 403,
+                            "nodeType": "Block",
+                            "src": "304:94:3",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "id": 397,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "id": 395,
+                                            "name": "newContractAddress",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 382,
+                                            "src": "315:18:3",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "id": 396,
+                                            "name": "newAddress",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 388,
+                                            "src": "336:10:3",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "src": "315:31:3",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "id": 398,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "315:31:3"
+                                },
+                                {
+                                    "eventCall": {
+                                        "arguments": [
+                                            {
+                                                "id": 400,
+                                                "name": "newAddress",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 388,
+                                                "src": "379:10:3",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            ],
+                                            "id": 399,
+                                            "name": "ContractUpgraded",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 386,
+                                            "src": "362:16:3",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                                                "typeString": "function (address)"
+                                            }
+                                        },
+                                        "id": 401,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "362:28:3",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 402,
+                                    "nodeType": "EmitStatement",
+                                    "src": "357:33:3"
+                                }
+                            ]
+                        },
+                        "functionSelector": "71587988",
+                        "id": 404,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [
+                            {
+                                "id": 391,
+                                "kind": "modifierInvocation",
+                                "modifierName": {
+                                    "id": 390,
+                                    "name": "onlyAdmin",
+                                    "nodeType": "IdentifierPath",
+                                    "referencedDeclaration": 55,
+                                    "src": "283:9:3"
+                                },
+                                "nodeType": "ModifierInvocation",
+                                "src": "283:9:3"
+                            },
+                            {
+                                "id": 393,
+                                "kind": "modifierInvocation",
+                                "modifierName": {
+                                    "id": 392,
+                                    "name": "whenPaused",
+                                    "nodeType": "IdentifierPath",
+                                    "referencedDeclaration": 338,
+                                    "src": "293:10:3"
+                                },
+                                "nodeType": "ModifierInvocation",
+                                "src": "293:10:3"
+                            }
+                        ],
+                        "name": "setNewAddress",
+                        "nameLocation": "240:13:3",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 389,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 388,
+                                    "mutability": "mutable",
+                                    "name": "newAddress",
+                                    "nameLocation": "262:10:3",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 404,
+                                    "src": "254:18:3",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    },
+                                    "typeName": {
+                                        "id": 387,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "254:7:3",
+                                        "stateMutability": "nonpayable",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "253:20:3"
+                        },
+                        "returnParameters": {
+                            "id": 394,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "304:0:3"
+                        },
+                        "scope": 418,
+                        "src": "231:167:3",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "body": {
+                            "id": 416,
+                            "nodeType": "Block",
+                            "src": "453:35:3",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [],
+                                        "expression": {
+                                            "argumentTypes": [],
+                                            "expression": {
+                                                "id": 411,
+                                                "name": "super",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 4294967271,
+                                                "src": "464:5:3",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_type$_t_super$_Upgradeable_$418_$",
+                                                    "typeString": "type(contract super Upgradeable)"
+                                                }
+                                            },
+                                            "id": 413,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberName": "_unpause",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 374,
+                                            "src": "464:14:3",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                                                "typeString": "function ()"
+                                            }
+                                        },
+                                        "id": 414,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "464:16:3",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 415,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "464:16:3"
+                                }
+                            ]
+                        },
+                        "functionSelector": "3f4ba83a",
+                        "id": 417,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [
+                            {
+                                "id": 407,
+                                "kind": "modifierInvocation",
+                                "modifierName": {
+                                    "id": 406,
+                                    "name": "onlyAdmin",
+                                    "nodeType": "IdentifierPath",
+                                    "referencedDeclaration": 55,
+                                    "src": "432:9:3"
+                                },
+                                "nodeType": "ModifierInvocation",
+                                "src": "432:9:3"
+                            },
+                            {
+                                "id": 409,
+                                "kind": "modifierInvocation",
+                                "modifierName": {
+                                    "id": 408,
+                                    "name": "whenPaused",
+                                    "nodeType": "IdentifierPath",
+                                    "referencedDeclaration": 338,
+                                    "src": "442:10:3"
+                                },
+                                "nodeType": "ModifierInvocation",
+                                "src": "442:10:3"
+                            }
+                        ],
+                        "name": "unpause",
+                        "nameLocation": "415:7:3",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 405,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "422:2:3"
+                        },
+                        "returnParameters": {
+                            "id": 410,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "453:0:3"
+                        },
+                        "scope": 418,
+                        "src": "406:82:3",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 419,
+                "src": "89:402:3",
+                "usedErrors": []
+            }
+        ],
+        "src": "34:457:3"
+    },
+    "functionHashes": {
+        "admin()": "f851a440",
+        "burner()": "27810b6e",
+        "ceo()": "908921fc",
+        "manager()": "481c6a75",
+        "minter()": "07546172",
+        "newAdmin(address)": "a6ba31c1",
+        "newBurner(address)": "f840f72b",
+        "newCEO(address)": "a9917dbe",
+        "newContractAddress()": "6af04a57",
+        "newManager(address)": "906e9400",
+        "newMinter(address)": "57341912",
+        "paused()": "5c975abb",
+        "setNewAddress(address)": "71587988",
+        "unpause()": "3f4ba83a"
+    },
+    "gasEstimates": null
+}
