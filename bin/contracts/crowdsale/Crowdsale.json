@@ -259,6 +259,13 @@
         },
         {
             "inputs": [],
+            "name": "pause",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
             "name": "paused",
             "outputs": [
                 {
@@ -269,9 +276,16 @@
             ],
             "stateMutability": "view",
             "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "unpause",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
         }
     ],
-    "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"purchaser\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"TokensPurchased\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"admin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"burner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"}],\"name\":\"buyTokens\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ceo\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getToken\",\"outputs\":[{\"internalType\":\"contract IBEP20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getWallet\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getWeiRaised\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"manager\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minter\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"newAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newBurner\",\"type\":\"address\"}],\"name\":\"newBurner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newCEO\",\"type\":\"address\"}],\"name\":\"newCEO\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newManager\",\"type\":\"address\"}],\"name\":\"newManager\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newMinter\",\"type\":\"address\"}],\"name\":\"newMinter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"TokensPurchased(address,address,uint256,uint256)\":{\"params\":{\"amount\":\"amount of tokens purchased\",\"beneficiary\":\"who got the tokens\",\"purchaser\":\"who paid for the tokens\",\"value\":\"weis paid for purchase\"}}},\"kind\":\"dev\",\"methods\":{\"buyTokens(address)\":{\"details\":\"low level token purchase ***DO NOT OVERRIDE*** This function has a non-reentrancy guard, so it shouldn't be called by another `nonReentrant` function.\",\"params\":{\"beneficiary\":\"Recipient of the token purchase\"}},\"constructor\":{\"details\":\"The rate is the conversion between wei and the smallest and indivisible token unit. So, if you are using a rate of 1 with a BEP20Detailed token with 3 decimals called TOK, 1 wei will give you 1 unit, or 0.001 TOK.\",\"params\":{\"rate\":\"Number of token units a buyer gets per wei\",\"token\":\"Address of the token being sold\",\"wallet\":\"Address where collected funds will be forwarded to\"}},\"getRate()\":{\"returns\":{\"_0\":\"the number of token units a buyer gets per wei.\"}},\"getToken()\":{\"returns\":{\"_0\":\"the token being sold.\"}},\"getWallet()\":{\"returns\":{\"_0\":\"the address where funds are collected.\"}},\"getWeiRaised()\":{\"returns\":{\"_0\":\"the amount of wei raised.\"}},\"paused()\":{\"details\":\"Returns true if the contract is paused, and false otherwise. Only callable by admin.\"}},\"version\":1},\"userdoc\":{\"events\":{\"TokensPurchased(address,address,uint256,uint256)\":{\"notice\":\"Event for token purchase logging\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/crowdsale/Crowdsale.sol\":\"Crowdsale\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/IBEP20.sol\":{\"keccak256\":\"0x32dbe8a97ed08930657e5bd851edb16cbed7fe804a1103f8b9ed5ff51d556768\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://95e2ddf07f236ce76296506d620330690a9c93c6b6eaaf53550c0024253faa00\",\"dweb:/ipfs/Qme7PZmHHfcoWi2QnKFABMZgWE6Ur46rp3tV2mgSZFYk7S\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/SafeBEP20.sol\":{\"keccak256\":\"0x9dc0bda121b21531076f1b47b8ac5b569e8c82e092f7bcbf5d092be347542488\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://da265c42d92446977c05e28d5c73b6acafbee329d413b41135be93451b5004a4\",\"dweb:/ipfs/QmW3sSRLP7tovj72vvxDy3nPuyf5FnV8u9rFzicDyKBLpF\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/crowdsale/Crowdsale.sol\":{\"keccak256\":\"0xbe6b5133bfc87d8ce608c56969e9b0b010ef75b3f7a6d162bc6931ac5ebdb262\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a88d84660edff497346e11f4eb1ba46baea26c3b5efcd2a84bab582db1788a94\",\"dweb:/ipfs/QmamGzVbM5Z5epwPwQ5JoS4wbkdnpf33cEeHNghxZfq3Vk\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/AccessControl.sol\":{\"keccak256\":\"0x92384730c6625ed87e77336de864d09ecd32f5c81a367daaabfcd9069f768990\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a9d0bd02c62a29872bee594184350ffeab9756510566be1d6cdcc1a141010e0c\",\"dweb:/ipfs/QmQcaAkXGzypJj4ysMRKSaaKYcMUjP1EbAYQS2EsUCbYNW\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Address.sol\":{\"keccak256\":\"0xad523089ef2d8ec5b1e04476c7eb4fdbb9679c960d638e81a52d3e656b85997a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://498daeeb58221517af32b4800b71bfe3b036f419fd226b0bd8a423d936d69f9f\",\"dweb:/ipfs/QmNpyLFXSgmm7nipcVigiC9KRjVr56h49GXMGAwKc1KMnN\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Context.sol\":{\"keccak256\":\"0xffc0776ebe4121e520cae8118bc5f413049825f7eed19c10744135162279c425\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://08f6f7e03480e61b4715eeb1e02ded0e57920990389bd3e0cdcd6228fac9a6fa\",\"dweb:/ipfs/QmddKZSX49barLgmP5FpaZ45DaUdPeFfJfkHzo5NnzoNrj\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Pausable.sol\":{\"keccak256\":\"0x949efd6e4bdc0fb825368a0dfdd63d40c3691d44b6ae963197f324a1abaf62e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://652a39dcdd2b7001b00d56bf7350cc81ead70be91d53a42bab0977f115081576\",\"dweb:/ipfs/QmTpfwzCaYDtCW1QyTmRVBFA3nz9VGyQ8PXYrq711RUPXm\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/ReentrancyGuard.sol\":{\"keccak256\":\"0x9334b8c7231902bb1b01814458cfd936f6a668aa9df1aa812cd5bbb1159b91fc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://604783ca963e0cedfd449839afe5830c4f1c02e182f0b14add926da03c7b3678\",\"dweb:/ipfs/QmefAiuY2QuqdesMYoi7AHD5vYihXTiRbZBj76Hr7WXkzx\"]}},\"version\":1}",
+    "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"purchaser\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"TokensPurchased\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"admin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"burner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"}],\"name\":\"buyTokens\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ceo\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getToken\",\"outputs\":[{\"internalType\":\"contract IBEP20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getWallet\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getWeiRaised\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"manager\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minter\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"newAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newBurner\",\"type\":\"address\"}],\"name\":\"newBurner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newCEO\",\"type\":\"address\"}],\"name\":\"newCEO\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newManager\",\"type\":\"address\"}],\"name\":\"newManager\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newMinter\",\"type\":\"address\"}],\"name\":\"newMinter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unpause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"TokensPurchased(address,address,uint256,uint256)\":{\"params\":{\"amount\":\"amount of tokens purchased\",\"beneficiary\":\"who got the tokens\",\"purchaser\":\"who paid for the tokens\",\"value\":\"weis paid for purchase\"}}},\"kind\":\"dev\",\"methods\":{\"buyTokens(address)\":{\"details\":\"low level token purchase ***DO NOT OVERRIDE*** This function has a non-reentrancy guard, so it shouldn't be called by another `nonReentrant` function.\",\"params\":{\"beneficiary\":\"Recipient of the token purchase\"}},\"constructor\":{\"details\":\"The rate is the conversion between wei and the smallest and indivisible token unit. So, if you are using a rate of 1 with a BEP20Detailed token with 3 decimals called TOK, 1 wei will give you 1 unit, or 0.001 TOK.\",\"params\":{\"rate\":\"Number of token units a buyer gets per wei\",\"token\":\"Address of the token being sold\",\"wallet\":\"Address where collected funds will be forwarded to\"}},\"getRate()\":{\"returns\":{\"_0\":\"the number of token units a buyer gets per wei.\"}},\"getToken()\":{\"returns\":{\"_0\":\"the token being sold.\"}},\"getWallet()\":{\"returns\":{\"_0\":\"the address where funds are collected.\"}},\"getWeiRaised()\":{\"returns\":{\"_0\":\"the amount of wei raised.\"}},\"pause()\":{\"details\":\"Triggers stopped state. Only callable by admin. Requirements: - The contract must not be paused.\"},\"paused()\":{\"details\":\"Returns true if the contract is paused, and false otherwise.\"},\"unpause()\":{\"details\":\"Returns to normal state. Only callable by admin. Requirements: - The contract must be paused.\"}},\"version\":1},\"userdoc\":{\"events\":{\"TokensPurchased(address,address,uint256,uint256)\":{\"notice\":\"Event for token purchase logging\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/crowdsale/Crowdsale.sol\":\"Crowdsale\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/IBEP20.sol\":{\"keccak256\":\"0x32dbe8a97ed08930657e5bd851edb16cbed7fe804a1103f8b9ed5ff51d556768\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://95e2ddf07f236ce76296506d620330690a9c93c6b6eaaf53550c0024253faa00\",\"dweb:/ipfs/Qme7PZmHHfcoWi2QnKFABMZgWE6Ur46rp3tV2mgSZFYk7S\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/SafeBEP20.sol\":{\"keccak256\":\"0x9dc0bda121b21531076f1b47b8ac5b569e8c82e092f7bcbf5d092be347542488\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://da265c42d92446977c05e28d5c73b6acafbee329d413b41135be93451b5004a4\",\"dweb:/ipfs/QmW3sSRLP7tovj72vvxDy3nPuyf5FnV8u9rFzicDyKBLpF\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/crowdsale/Crowdsale.sol\":{\"keccak256\":\"0xbe6b5133bfc87d8ce608c56969e9b0b010ef75b3f7a6d162bc6931ac5ebdb262\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a88d84660edff497346e11f4eb1ba46baea26c3b5efcd2a84bab582db1788a94\",\"dweb:/ipfs/QmamGzVbM5Z5epwPwQ5JoS4wbkdnpf33cEeHNghxZfq3Vk\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/AccessControl.sol\":{\"keccak256\":\"0xf6d1743c1ce24b1eeb96674dd83c0a5319fc18cb711d9fac9f026120baff12db\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ba1056770967543c520299e011c91defebf3b7e19b8dd6d392128be08611a160\",\"dweb:/ipfs/QmV31cXHjX6fZss1sWWCyv9JJnxgxbfuFrc8auACRXbq4X\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Address.sol\":{\"keccak256\":\"0xad523089ef2d8ec5b1e04476c7eb4fdbb9679c960d638e81a52d3e656b85997a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://498daeeb58221517af32b4800b71bfe3b036f419fd226b0bd8a423d936d69f9f\",\"dweb:/ipfs/QmNpyLFXSgmm7nipcVigiC9KRjVr56h49GXMGAwKc1KMnN\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Context.sol\":{\"keccak256\":\"0xffc0776ebe4121e520cae8118bc5f413049825f7eed19c10744135162279c425\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://08f6f7e03480e61b4715eeb1e02ded0e57920990389bd3e0cdcd6228fac9a6fa\",\"dweb:/ipfs/QmddKZSX49barLgmP5FpaZ45DaUdPeFfJfkHzo5NnzoNrj\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Pausable.sol\":{\"keccak256\":\"0x50a1bb65c189e1fa20c4562f52340152be7fae76e874dbeaf4a32b6e0d3b2720\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://efdb0146b520a67373abd1215ec412a3529db33423963faa92f069b403f60bfc\",\"dweb:/ipfs/QmPgPcsgDUSSG1oy27nsdj6YRtq9nxLcuxuVJVWY75TJdD\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/ReentrancyGuard.sol\":{\"keccak256\":\"0x9334b8c7231902bb1b01814458cfd936f6a668aa9df1aa812cd5bbb1159b91fc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://604783ca963e0cedfd449839afe5830c4f1c02e182f0b14add926da03c7b3678\",\"dweb:/ipfs/QmefAiuY2QuqdesMYoi7AHD5vYihXTiRbZBj76Hr7WXkzx\"]}},\"version\":1}",
     "bytecode": "",
     "deployedBytecode": "",
     "sourceMap": "",
@@ -300,10 +314,10 @@
                 117
             ],
             "Pausable": [
-                1377
+                1375
             ],
             "ReentrancyGuard": [
-                1417
+                1415
             ],
             "SafeBEP20": [
                 341
@@ -343,7 +357,7 @@
                 "nameLocation": "-1:-1:-1",
                 "nodeType": "ImportDirective",
                 "scope": 705,
-                "sourceUnit": 1418,
+                "sourceUnit": 1416,
                 "src": "96:41:2",
                 "symbolAliases": [],
                 "unitAlias": ""
@@ -379,7 +393,7 @@
                 "nameLocation": "-1:-1:-1",
                 "nodeType": "ImportDirective",
                 "scope": 705,
-                "sourceUnit": 1378,
+                "sourceUnit": 1376,
                 "src": "204:34:2",
                 "symbolAliases": [],
                 "unitAlias": ""
@@ -404,7 +418,7 @@
                             "id": 351,
                             "name": "ReentrancyGuard",
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 1417,
+                            "referencedDeclaration": 1415,
                             "src": "282:15:2"
                         },
                         "id": 352,
@@ -416,7 +430,7 @@
                             "id": 353,
                             "name": "Pausable",
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 1377,
+                            "referencedDeclaration": 1375,
                             "src": "299:8:2"
                         },
                         "id": 354,
@@ -430,9 +444,9 @@
                 "id": 704,
                 "linearizedBaseContracts": [
                     704,
-                    1377,
+                    1375,
                     957,
-                    1417,
+                    1415,
                     1276
                 ],
                 "name": "Crowdsale",
@@ -3038,7 +3052,7 @@
                                     "id": 518,
                                     "name": "nonReentrant",
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 1416,
+                                    "referencedDeclaration": 1414,
                                     "src": "3933:12:2"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -3051,7 +3065,7 @@
                                     "id": 520,
                                     "name": "whenNotPaused",
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 1329,
+                                    "referencedDeclaration": 1327,
                                     "src": "3946:13:2"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -4718,7 +4732,9 @@
         "newCEO(address)": "a9917dbe",
         "newManager(address)": "906e9400",
         "newMinter(address)": "57341912",
-        "paused()": "5c975abb"
+        "pause()": "8456cb59",
+        "paused()": "5c975abb",
+        "unpause()": "3f4ba83a"
     },
     "gasEstimates": null
 }

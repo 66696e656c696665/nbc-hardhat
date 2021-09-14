@@ -36,11 +36,8 @@ abstract contract Pausable is Context, AccessControl {
 
     /**
      * @dev Returns true if the contract is paused, and false otherwise.
-     *
-     * Only callable by admin.
-     *
      */
-    function paused() public view virtual onlyAdmin returns (bool) {
+    function paused() public view virtual returns (bool) {
         return _paused;
     }
 
@@ -77,7 +74,7 @@ abstract contract Pausable is Context, AccessControl {
      *
      * - The contract must not be paused.
      */
-    function _pause() internal virtual whenNotPaused onlyAdmin {
+    function pause() public virtual whenNotPaused onlyAdmin {
         _paused = true;
         emit Paused(_msgSender());
     }
@@ -87,12 +84,11 @@ abstract contract Pausable is Context, AccessControl {
      *
      * Only callable by admin.
      *
-     *
      * Requirements:
      *
      * - The contract must be paused.
      */
-    function _unpause() internal virtual whenPaused onlyAdmin {
+    function unpause() public virtual whenPaused onlyAdmin {
         _paused = false;
         emit Unpaused(_msgSender());
     }

@@ -87,7 +87,7 @@ abstract contract AccessControl is Context {
         ceo = _newCEO;
     }
 
-    function newManager(address _newManager) public onlyAdmin {
+    function newManager(address _newManager) public onlyAdminOrCEO {
         require(_newManager != address(0));
         manager = _newManager;
     }

@@ -3,6 +3,7 @@
 pragma solidity ^0.8.6;
 
 import "../BEP20/BEP20.sol";
+import "../security/AccessControl.sol";
 
 /**
  * @dev Total supply starts at 100,000,000 (100 million)
@@ -386,7 +387,7 @@ contract NBCoin is BEP20("NBCoin Beta", "NBCB") {
         return i;
     }
     
-    function mint(address _to, uint256 _amount) public onlyMinter returns (bool) {
+    function mint(address _to, uint256 _amount) public onlyMinter whenNotPaused returns (bool) {
         require(totalSupply() + _amount <= cap, "BEP20: Cap reached. Cannot mint");
         _mint(_to, _amount);
         _moveVotingPower(address(0), votingDelegates[_to], _amount);
@@ -394,7 +395,7 @@ contract NBCoin is BEP20("NBCoin Beta", "NBCB") {
         return true;
     }
 
-    function burn(address _from, uint256 _amount) public onlyBurner returns (bool) {
+    function burn(address _from, uint256 _amount) public onlyBurner whenNotPaused returns (bool) {
         _burn(_from, _amount);
         _moveVotingPower(votingDelegates[_from], address(0), _amount);
         

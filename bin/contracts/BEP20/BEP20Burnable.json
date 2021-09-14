@@ -111,6 +111,19 @@
             "anonymous": false,
             "inputs": [
                 {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "Paused",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
                     "indexed": true,
                     "internalType": "address",
                     "name": "from",
@@ -161,6 +174,19 @@
                 }
             ],
             "name": "Transferred",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "Unpaused",
             "type": "event"
         },
         {
@@ -467,6 +493,26 @@
         },
         {
             "inputs": [],
+            "name": "pause",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "paused",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
             "name": "symbol",
             "outputs": [
                 {
@@ -543,9 +589,16 @@
             ],
             "stateMutability": "nonpayable",
             "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "unpause",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
         }
     ],
-    "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_oldValue\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"Approved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"by\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Burnt\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Minted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_by\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"Transferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"admin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"burnFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"burner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ceo\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"subtractedValue\",\"type\":\"uint256\"}],\"name\":\"decreaseAllowance\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"addedValue\",\"type\":\"uint256\"}],\"name\":\"increaseAllowance\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"manager\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minter\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"newAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newBurner\",\"type\":\"address\"}],\"name\":\"newBurner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newCEO\",\"type\":\"address\"}],\"name\":\"newCEO\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newManager\",\"type\":\"address\"}],\"name\":\"newManager\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newMinter\",\"type\":\"address\"}],\"name\":\"newMinter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Extension of {BEP20} that allows token holders to destroy both their own tokens and those that they have an allowance for, in a way that can be recognized off-chain (via event analysis).\",\"kind\":\"dev\",\"methods\":{\"approve(address,uint256)\":{\"details\":\"Sets `amount` as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. Requirements: - `spender` cannot be the zero address.\"},\"balanceOf(address)\":{\"details\":\"Returns the amount of tokens owned by `account`.\"},\"burn(uint256)\":{\"details\":\"Destroys `amount` tokens from the caller. See {BEP20-_burn}.\"},\"burnFrom(address,uint256)\":{\"details\":\"Destroys `amount` tokens from `account`, deducting from the caller's allowance. See {BEP20-_burn} and {BEP20-allowance}. Requirements: - the caller must have allowance for ``accounts``'s tokens of at least `amount`.\"},\"decimals()\":{\"details\":\"Returns the token decimals.\"},\"decreaseAllowance(address,uint256)\":{\"details\":\"Atomically decreases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IBEP20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`.\"},\"increaseAllowance(address,uint256)\":{\"details\":\"Atomically increases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IBEP20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address.\"},\"name()\":{\"details\":\"Returns the name of the token.\"},\"symbol()\":{\"details\":\"Returns the symbol of the token.\"},\"totalSupply()\":{\"details\":\"Returns the amount of tokens in existence.\"},\"transfer(address,uint256)\":{\"details\":\"Moves `amount` tokens from the caller's account to `recipient`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event. Requirements: - `recipient` cannot be the zero address. - the caller must have a balance of at least `amount`.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"Moves `amount` tokens from `sender` to `recipient` using the allowance mechanism. `amount` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {BEP20}. Requirements: - `sender` and `recipient` cannot be the zero address. - `sender` must have a balance of at least `amount`. - the caller must have allowance for ``sender``'s tokens of at least `amount`.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/BEP20Burnable.sol\":\"BEP20Burnable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/BEP20.sol\":{\"keccak256\":\"0xb82c57c1bac15265927aeb3ad4cbefc52c5011dc9095ce881c2d0b84db10a277\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6e7fe3d60433441f3385b0c13eefbeeee394f2fc035207d6624fac7635769fcb\",\"dweb:/ipfs/QmW2mEuGHTPLGHSWkBYG9ZVinrHZ9cmikp681Lh83YTy7J\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/BEP20Burnable.sol\":{\"keccak256\":\"0x2b2c517ca1e59f4b401ca2de55ff86114840d2bac4fc8819aa7c0afa7f011e02\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fd8ec72c3006695170377296dace5162248196296ce73f48ce7c687945cd3222\",\"dweb:/ipfs/QmNfBPhUGHfLekPB6mmaxUBJjRxJXnnv23ebLZWZTFStQj\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/IBEP20.sol\":{\"keccak256\":\"0x32dbe8a97ed08930657e5bd851edb16cbed7fe804a1103f8b9ed5ff51d556768\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://95e2ddf07f236ce76296506d620330690a9c93c6b6eaaf53550c0024253faa00\",\"dweb:/ipfs/Qme7PZmHHfcoWi2QnKFABMZgWE6Ur46rp3tV2mgSZFYk7S\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/IBEP20Metadata.sol\":{\"keccak256\":\"0xbb9c76cf7bc539b7aaa4b323affa61ff8ddadff81eecd52701cd2487b2d7b126\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7eaccfc605188f9dc9dfe72c0b797ef0b0da1201b85edbb858df3969678b82d7\",\"dweb:/ipfs/QmcxWS1oECHqA7aUmD3qn8gbABjGYgGVYjWLHXSmEfKEVC\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/AccessControl.sol\":{\"keccak256\":\"0x92384730c6625ed87e77336de864d09ecd32f5c81a367daaabfcd9069f768990\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a9d0bd02c62a29872bee594184350ffeab9756510566be1d6cdcc1a141010e0c\",\"dweb:/ipfs/QmQcaAkXGzypJj4ysMRKSaaKYcMUjP1EbAYQS2EsUCbYNW\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Address.sol\":{\"keccak256\":\"0xad523089ef2d8ec5b1e04476c7eb4fdbb9679c960d638e81a52d3e656b85997a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://498daeeb58221517af32b4800b71bfe3b036f419fd226b0bd8a423d936d69f9f\",\"dweb:/ipfs/QmNpyLFXSgmm7nipcVigiC9KRjVr56h49GXMGAwKc1KMnN\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Context.sol\":{\"keccak256\":\"0xffc0776ebe4121e520cae8118bc5f413049825f7eed19c10744135162279c425\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://08f6f7e03480e61b4715eeb1e02ded0e57920990389bd3e0cdcd6228fac9a6fa\",\"dweb:/ipfs/QmddKZSX49barLgmP5FpaZ45DaUdPeFfJfkHzo5NnzoNrj\"]}},\"version\":1}",
+    "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_oldValue\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"Approved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"by\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Burnt\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Minted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_by\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"Transferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"admin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"burnFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"burner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ceo\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"subtractedValue\",\"type\":\"uint256\"}],\"name\":\"decreaseAllowance\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"addedValue\",\"type\":\"uint256\"}],\"name\":\"increaseAllowance\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"manager\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"minter\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"newAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newBurner\",\"type\":\"address\"}],\"name\":\"newBurner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newCEO\",\"type\":\"address\"}],\"name\":\"newCEO\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newManager\",\"type\":\"address\"}],\"name\":\"newManager\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newMinter\",\"type\":\"address\"}],\"name\":\"newMinter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unpause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Extension of {BEP20} that allows token holders to destroy both their own tokens and those that they have an allowance for, in a way that can be recognized off-chain (via event analysis).\",\"kind\":\"dev\",\"methods\":{\"approve(address,uint256)\":{\"details\":\"Sets `amount` as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. Requirements: - `spender` cannot be the zero address.\"},\"balanceOf(address)\":{\"details\":\"Returns the amount of tokens owned by `account`.\"},\"burn(uint256)\":{\"details\":\"Destroys `amount` tokens from the caller. See {BEP20-_burn}.\"},\"burnFrom(address,uint256)\":{\"details\":\"Destroys `amount` tokens from `account`, deducting from the caller's allowance. See {BEP20-_burn} and {BEP20-allowance}. Requirements: - the caller must have allowance for ``accounts``'s tokens of at least `amount`.\"},\"decimals()\":{\"details\":\"Returns the token decimals.\"},\"decreaseAllowance(address,uint256)\":{\"details\":\"Atomically decreases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IBEP20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`.\"},\"increaseAllowance(address,uint256)\":{\"details\":\"Atomically increases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IBEP20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address.\"},\"name()\":{\"details\":\"Returns the name of the token.\"},\"pause()\":{\"details\":\"Triggers stopped state. Only callable by admin. Requirements: - The contract must not be paused.\"},\"paused()\":{\"details\":\"Returns true if the contract is paused, and false otherwise.\"},\"symbol()\":{\"details\":\"Returns the symbol of the token.\"},\"totalSupply()\":{\"details\":\"Returns the amount of tokens in existence.\"},\"transfer(address,uint256)\":{\"details\":\"Moves `amount` tokens from the caller's account to `recipient`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event. Requirements: - `recipient` cannot be the zero address. - the caller must have a balance of at least `amount`.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"Moves `amount` tokens from `sender` to `recipient` using the allowance mechanism. `amount` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {BEP20}. Requirements: - `sender` and `recipient` cannot be the zero address. - `sender` must have a balance of at least `amount`. - the caller must have allowance for ``sender``'s tokens of at least `amount`.\"},\"unpause()\":{\"details\":\"Returns to normal state. Only callable by admin. Requirements: - The contract must be paused.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/BEP20Burnable.sol\":\"BEP20Burnable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/BEP20.sol\":{\"keccak256\":\"0xabf3d18ba8c084cb17568d3b6b679410f19e859396f174e368b5b18f1e38827f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://554db85c78facf641c239629afe1a095fd9202cd29ad63c328cece0c96b70675\",\"dweb:/ipfs/QmdksE231tuuRKBFw8yyriLNG8PSEh8eVESLkozfjgULiL\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/BEP20Burnable.sol\":{\"keccak256\":\"0x2b2c517ca1e59f4b401ca2de55ff86114840d2bac4fc8819aa7c0afa7f011e02\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fd8ec72c3006695170377296dace5162248196296ce73f48ce7c687945cd3222\",\"dweb:/ipfs/QmNfBPhUGHfLekPB6mmaxUBJjRxJXnnv23ebLZWZTFStQj\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/IBEP20.sol\":{\"keccak256\":\"0x32dbe8a97ed08930657e5bd851edb16cbed7fe804a1103f8b9ed5ff51d556768\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://95e2ddf07f236ce76296506d620330690a9c93c6b6eaaf53550c0024253faa00\",\"dweb:/ipfs/Qme7PZmHHfcoWi2QnKFABMZgWE6Ur46rp3tV2mgSZFYk7S\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/IBEP20Metadata.sol\":{\"keccak256\":\"0xbb9c76cf7bc539b7aaa4b323affa61ff8ddadff81eecd52701cd2487b2d7b126\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7eaccfc605188f9dc9dfe72c0b797ef0b0da1201b85edbb858df3969678b82d7\",\"dweb:/ipfs/QmcxWS1oECHqA7aUmD3qn8gbABjGYgGVYjWLHXSmEfKEVC\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/AccessControl.sol\":{\"keccak256\":\"0xf6d1743c1ce24b1eeb96674dd83c0a5319fc18cb711d9fac9f026120baff12db\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ba1056770967543c520299e011c91defebf3b7e19b8dd6d392128be08611a160\",\"dweb:/ipfs/QmV31cXHjX6fZss1sWWCyv9JJnxgxbfuFrc8auACRXbq4X\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Address.sol\":{\"keccak256\":\"0xad523089ef2d8ec5b1e04476c7eb4fdbb9679c960d638e81a52d3e656b85997a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://498daeeb58221517af32b4800b71bfe3b036f419fd226b0bd8a423d936d69f9f\",\"dweb:/ipfs/QmNpyLFXSgmm7nipcVigiC9KRjVr56h49GXMGAwKc1KMnN\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Context.sol\":{\"keccak256\":\"0xffc0776ebe4121e520cae8118bc5f413049825f7eed19c10744135162279c425\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://08f6f7e03480e61b4715eeb1e02ded0e57920990389bd3e0cdcd6228fac9a6fa\",\"dweb:/ipfs/QmddKZSX49barLgmP5FpaZ45DaUdPeFfJfkHzo5NnzoNrj\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Pausable.sol\":{\"keccak256\":\"0x50a1bb65c189e1fa20c4562f52340152be7fae76e874dbeaf4a32b6e0d3b2720\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://efdb0146b520a67373abd1215ec412a3529db33423963faa92f069b403f60bfc\",\"dweb:/ipfs/QmPgPcsgDUSSG1oy27nsdj6YRtq9nxLcuxuVJVWY75TJdD\"]}},\"version\":1}",
     "bytecode": "",
     "deployedBytecode": "",
     "sourceMap": "",
@@ -559,33 +612,36 @@
         "absolutePath": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/BEP20Burnable.sol",
         "exportedSymbols": {
             "AccessControl": [
-                1051
+                1061
             ],
             "Address": [
-                1348
+                1358
             ],
             "BEP20": [
-                593
+                603
             ],
             "BEP20Burnable": [
-                655
+                665
             ],
             "Context": [
-                1370
+                1380
             ],
             "IBEP20": [
-                773
+                783
             ],
             "IBEP20Metadata": [
-                798
+                808
+            ],
+            "Pausable": [
+                1479
             ]
         },
-        "id": 656,
+        "id": 666,
         "license": "MIT",
         "nodeType": "SourceUnit",
         "nodes": [
             {
-                "id": 595,
+                "id": 605,
                 "literals": [
                     "solidity",
                     "^",
@@ -598,11 +654,11 @@
             {
                 "absolutePath": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP20/BEP20.sol",
                 "file": "./BEP20.sol",
-                "id": 596,
+                "id": 606,
                 "nameLocation": "-1:-1:-1",
                 "nodeType": "ImportDirective",
-                "scope": 656,
-                "sourceUnit": 594,
+                "scope": 666,
+                "sourceUnit": 604,
                 "src": "59:21:1",
                 "symbolAliases": [],
                 "unitAlias": ""
@@ -610,11 +666,11 @@
             {
                 "absolutePath": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/security/Context.sol",
                 "file": "../security/Context.sol",
-                "id": 597,
+                "id": 607,
                 "nameLocation": "-1:-1:-1",
                 "nodeType": "ImportDirective",
-                "scope": 656,
-                "sourceUnit": 1371,
+                "scope": 666,
+                "sourceUnit": 1381,
                 "src": "82:33:1",
                 "symbolAliases": [],
                 "unitAlias": ""
@@ -624,25 +680,25 @@
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 599,
+                            "id": 609,
                             "name": "Context",
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 1370,
+                            "referencedDeclaration": 1380,
                             "src": "368:7:1"
                         },
-                        "id": 600,
+                        "id": 610,
                         "nodeType": "InheritanceSpecifier",
                         "src": "368:7:1"
                     },
                     {
                         "baseName": {
-                            "id": 601,
+                            "id": 611,
                             "name": "BEP20",
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 593,
+                            "referencedDeclaration": 603,
                             "src": "377:5:1"
                         },
-                        "id": 602,
+                        "id": 612,
                         "nodeType": "InheritanceSpecifier",
                         "src": "377:5:1"
                     }
@@ -650,20 +706,21 @@
                 "contractDependencies": [],
                 "contractKind": "contract",
                 "documentation": {
-                    "id": 598,
+                    "id": 608,
                     "nodeType": "StructuredDocumentation",
                     "src": "119:212:1",
                     "text": " @dev Extension of {BEP20} that allows token holders to destroy both their own\n tokens and those that they have an allowance for, in a way that can be\n recognized off-chain (via event analysis)."
                 },
                 "fullyImplemented": false,
-                "id": 655,
+                "id": 665,
                 "linearizedBaseContracts": [
-                    655,
-                    593,
-                    1051,
-                    798,
-                    773,
-                    1370
+                    665,
+                    603,
+                    1479,
+                    1061,
+                    808,
+                    783,
+                    1380
                 ],
                 "name": "BEP20Burnable",
                 "nameLocation": "351:13:1",
@@ -671,7 +728,7 @@
                 "nodes": [
                     {
                         "body": {
-                            "id": 614,
+                            "id": 624,
                             "nodeType": "Block",
                             "src": "543:46:1",
                             "statements": [
@@ -682,18 +739,18 @@
                                                 "arguments": [],
                                                 "expression": {
                                                     "argumentTypes": [],
-                                                    "id": 609,
+                                                    "id": 619,
                                                     "name": "_msgSender",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 1360,
+                                                    "referencedDeclaration": 1370,
                                                     "src": "560:10:1",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
                                                         "typeString": "function () view returns (address)"
                                                     }
                                                 },
-                                                "id": 610,
+                                                "id": 620,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -709,11 +766,11 @@
                                                 }
                                             },
                                             {
-                                                "id": 611,
+                                                "id": 621,
                                                 "name": "amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 605,
+                                                "referencedDeclaration": 615,
                                                 "src": "574:6:1",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -732,18 +789,18 @@
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 608,
+                                            "id": 618,
                                             "name": "_burn",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 451,
+                                            "referencedDeclaration": 461,
                                             "src": "554:5:1",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
                                                 "typeString": "function (address,uint256)"
                                             }
                                         },
-                                        "id": 612,
+                                        "id": 622,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -758,20 +815,20 @@
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 613,
+                                    "id": 623,
                                     "nodeType": "ExpressionStatement",
                                     "src": "554:27:1"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 603,
+                            "id": 613,
                             "nodeType": "StructuredDocumentation",
                             "src": "390:102:1",
                             "text": " @dev Destroys `amount` tokens from the caller.\n See {BEP20-_burn}."
                         },
                         "functionSelector": "42966c68",
-                        "id": 615,
+                        "id": 625,
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
@@ -779,17 +836,17 @@
                         "nameLocation": "507:4:1",
                         "nodeType": "FunctionDefinition",
                         "parameters": {
-                            "id": 606,
+                            "id": 616,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 605,
+                                    "id": 615,
                                     "mutability": "mutable",
                                     "name": "amount",
                                     "nameLocation": "520:6:1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 615,
+                                    "scope": 625,
                                     "src": "512:14:1",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -798,7 +855,7 @@
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 604,
+                                        "id": 614,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "512:7:1",
@@ -813,12 +870,12 @@
                             "src": "511:16:1"
                         },
                         "returnParameters": {
-                            "id": 607,
+                            "id": 617,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "543:0:1"
                         },
-                        "scope": 655,
+                        "scope": 665,
                         "src": "498:91:1",
                         "stateMutability": "nonpayable",
                         "virtual": true,
@@ -826,23 +883,23 @@
                     },
                     {
                         "body": {
-                            "id": 653,
+                            "id": 663,
                             "nodeType": "Block",
                             "src": "974:302:1",
                             "statements": [
                                 {
                                     "assignments": [
-                                        624
+                                        634
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 624,
+                                            "id": 634,
                                             "mutability": "mutable",
                                             "name": "currentAllowance",
                                             "nameLocation": "993:16:1",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 653,
+                                            "scope": 663,
                                             "src": "985:24:1",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -851,7 +908,7 @@
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 623,
+                                                "id": 633,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "985:7:1",
@@ -863,15 +920,15 @@
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 630,
+                                    "id": 640,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 626,
+                                                "id": 636,
                                                 "name": "account",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 618,
+                                                "referencedDeclaration": 628,
                                                 "src": "1022:7:1",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -882,18 +939,18 @@
                                                 "arguments": [],
                                                 "expression": {
                                                     "argumentTypes": [],
-                                                    "id": 627,
+                                                    "id": 637,
                                                     "name": "_msgSender",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 1360,
+                                                    "referencedDeclaration": 1370,
                                                     "src": "1031:10:1",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
                                                         "typeString": "function () view returns (address)"
                                                     }
                                                 },
-                                                "id": 628,
+                                                "id": 638,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -920,18 +977,18 @@
                                                     "typeString": "address"
                                                 }
                                             ],
-                                            "id": 625,
+                                            "id": 635,
                                             "name": "allowance",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 149,
+                                            "referencedDeclaration": 151,
                                             "src": "1012:9:1",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_view$_t_address_$_t_address_$returns$_t_uint256_$",
                                                 "typeString": "function (address,address) view returns (uint256)"
                                             }
                                         },
-                                        "id": 629,
+                                        "id": 639,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -957,17 +1014,17 @@
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 634,
+                                                "id": 644,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 632,
+                                                    "id": 642,
                                                     "name": "currentAllowance",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 624,
+                                                    "referencedDeclaration": 634,
                                                     "src": "1063:16:1",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -977,11 +1034,11 @@
                                                 "nodeType": "BinaryOperation",
                                                 "operator": ">=",
                                                 "rightExpression": {
-                                                    "id": 633,
+                                                    "id": 643,
                                                     "name": "amount",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 620,
+                                                    "referencedDeclaration": 630,
                                                     "src": "1083:6:1",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -996,7 +1053,7 @@
                                             },
                                             {
                                                 "hexValue": "42455032303a204275726e20616d6f756e74206578636565647320616c6c6f77616e6365",
-                                                "id": 635,
+                                                "id": 645,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -1022,7 +1079,7 @@
                                                     "typeString": "literal_string \"BEP20: Burn amount exceeds allowance\""
                                                 }
                                             ],
-                                            "id": 631,
+                                            "id": 641,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -1036,7 +1093,7 @@
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 636,
+                                        "id": 646,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1051,12 +1108,12 @@
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 637,
+                                    "id": 647,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1055:75:1"
                                 },
                                 {
-                                    "id": 647,
+                                    "id": 657,
                                     "nodeType": "UncheckedBlock",
                                     "src": "1141:95:1",
                                     "statements": [
@@ -1064,11 +1121,11 @@
                                             "expression": {
                                                 "arguments": [
                                                     {
-                                                        "id": 639,
+                                                        "id": 649,
                                                         "name": "account",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 618,
+                                                        "referencedDeclaration": 628,
                                                         "src": "1175:7:1",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -1079,18 +1136,18 @@
                                                         "arguments": [],
                                                         "expression": {
                                                             "argumentTypes": [],
-                                                            "id": 640,
+                                                            "id": 650,
                                                             "name": "_msgSender",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 1360,
+                                                            "referencedDeclaration": 1370,
                                                             "src": "1184:10:1",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
                                                                 "typeString": "function () view returns (address)"
                                                             }
                                                         },
-                                                        "id": 641,
+                                                        "id": 651,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -1110,17 +1167,17 @@
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 644,
+                                                        "id": 654,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 642,
+                                                            "id": 652,
                                                             "name": "currentAllowance",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 624,
+                                                            "referencedDeclaration": 634,
                                                             "src": "1198:16:1",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -1130,11 +1187,11 @@
                                                         "nodeType": "BinaryOperation",
                                                         "operator": "-",
                                                         "rightExpression": {
-                                                            "id": 643,
+                                                            "id": 653,
                                                             "name": "amount",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 620,
+                                                            "referencedDeclaration": 630,
                                                             "src": "1217:6:1",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -1163,18 +1220,18 @@
                                                             "typeString": "uint256"
                                                         }
                                                     ],
-                                                    "id": 638,
+                                                    "id": 648,
                                                     "name": "_approve",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 496,
+                                                    "referencedDeclaration": 506,
                                                     "src": "1166:8:1",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
                                                         "typeString": "function (address,address,uint256)"
                                                     }
                                                 },
-                                                "id": 645,
+                                                "id": 655,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -1189,7 +1246,7 @@
                                                     "typeString": "tuple()"
                                                 }
                                             },
-                                            "id": 646,
+                                            "id": 656,
                                             "nodeType": "ExpressionStatement",
                                             "src": "1166:58:1"
                                         }
@@ -1199,11 +1256,11 @@
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 649,
+                                                "id": 659,
                                                 "name": "account",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 618,
+                                                "referencedDeclaration": 628,
                                                 "src": "1252:7:1",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -1211,11 +1268,11 @@
                                                 }
                                             },
                                             {
-                                                "id": 650,
+                                                "id": 660,
                                                 "name": "amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 620,
+                                                "referencedDeclaration": 630,
                                                 "src": "1261:6:1",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1234,18 +1291,18 @@
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 648,
+                                            "id": 658,
                                             "name": "_burn",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 451,
+                                            "referencedDeclaration": 461,
                                             "src": "1246:5:1",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
                                                 "typeString": "function (address,uint256)"
                                             }
                                         },
-                                        "id": 651,
+                                        "id": 661,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1260,20 +1317,20 @@
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 652,
+                                    "id": 662,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1246:22:1"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 616,
+                            "id": 626,
                             "nodeType": "StructuredDocumentation",
                             "src": "597:305:1",
                             "text": " @dev Destroys `amount` tokens from `account`, deducting from the caller's\n allowance.\n See {BEP20-_burn} and {BEP20-allowance}.\n Requirements:\n - the caller must have allowance for ``accounts``'s tokens of at least\n `amount`."
                         },
                         "functionSelector": "79cc6790",
-                        "id": 654,
+                        "id": 664,
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
@@ -1281,17 +1338,17 @@
                         "nameLocation": "917:8:1",
                         "nodeType": "FunctionDefinition",
                         "parameters": {
-                            "id": 621,
+                            "id": 631,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 618,
+                                    "id": 628,
                                     "mutability": "mutable",
                                     "name": "account",
                                     "nameLocation": "934:7:1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 654,
+                                    "scope": 664,
                                     "src": "926:15:1",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1300,7 +1357,7 @@
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 617,
+                                        "id": 627,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "926:7:1",
@@ -1314,12 +1371,12 @@
                                 },
                                 {
                                     "constant": false,
-                                    "id": 620,
+                                    "id": 630,
                                     "mutability": "mutable",
                                     "name": "amount",
                                     "nameLocation": "951:6:1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 654,
+                                    "scope": 664,
                                     "src": "943:14:1",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1328,7 +1385,7 @@
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 619,
+                                        "id": 629,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "943:7:1",
@@ -1343,19 +1400,19 @@
                             "src": "925:33:1"
                         },
                         "returnParameters": {
-                            "id": 622,
+                            "id": 632,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "974:0:1"
                         },
-                        "scope": 655,
+                        "scope": 665,
                         "src": "908:368:1",
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "public"
                     }
                 ],
-                "scope": 656,
+                "scope": 666,
                 "src": "333:946:1",
                 "usedErrors": []
             }
@@ -1382,10 +1439,13 @@
         "newCEO(address)": "a9917dbe",
         "newManager(address)": "906e9400",
         "newMinter(address)": "57341912",
+        "pause()": "8456cb59",
+        "paused()": "5c975abb",
         "symbol()": "95d89b41",
         "totalSupply()": "18160ddd",
         "transfer(address,uint256)": "a9059cbb",
-        "transferFrom(address,address,uint256)": "23b872dd"
+        "transferFrom(address,address,uint256)": "23b872dd",
+        "unpause()": "3f4ba83a"
     },
     "gasEstimates": null
 }
