@@ -4,8 +4,19 @@ pragma solidity ^0.8.6;
 
 import "./IBEP721Receiver.sol";
 
+/**
+ * @dev Implementation of the {IERC721Receiver} interface.
+ *
+ * Accepts all token transfers.
+ * Make sure the contract is able to use its token with {IERC721-safeTransferFrom}, {IERC721-approve} or {IERC721-setApprovalForAll}.
+ */
 contract BEP721Receiver is IBEP721Receiver {
-    function onBEP721Received(address, address, uint256, bytes calldata) external override pure returns (bytes4) {
-        return bytes4(keccak256("onBEP721Received(address,address,uint256,bytes)"));
+    /**
+     * @dev See {IERC721Receiver-onERC721Received}.
+     *
+     * Always returns `IERC721Receiver.onERC721Received.selector`.
+     */
+    function onBEP721Received(address, address, uint256, bytes memory) public virtual override returns (bytes4) {
+        return this.onBEP721Received.selector;
     }
 }

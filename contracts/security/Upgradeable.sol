@@ -13,8 +13,4 @@ abstract contract Upgradeable is Pausable {
         newContractAddress = newAddress;
         emit ContractUpgraded(newAddress);
     }
-
-    function unpause() public onlyAdmin whenPaused {
-        super._unpause();
-    }
 }
