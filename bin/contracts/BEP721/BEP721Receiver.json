@@ -1,0 +1,376 @@
+{
+    "contractName": "BEP721Receiver",
+    "abi": [
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "",
+                    "type": "bytes"
+                }
+            ],
+            "name": "onBEP721Received",
+            "outputs": [
+                {
+                    "internalType": "bytes4",
+                    "name": "",
+                    "type": "bytes4"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"onBEP721Received\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Implementation of the {IERC721Receiver} interface. Accepts all token transfers. Make sure the contract is able to use its token with {IERC721-safeTransferFrom}, {IERC721-approve} or {IERC721-setApprovalForAll}.\",\"kind\":\"dev\",\"methods\":{\"onBEP721Received(address,address,uint256,bytes)\":{\"details\":\"See {IERC721Receiver-onERC721Received}. Always returns `IERC721Receiver.onERC721Received.selector`.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP721/BEP721Receiver.sol\":\"BEP721Receiver\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP721/BEP721Receiver.sol\":{\"keccak256\":\"0xe8bb49de59b34c2052b67a83b51c3685aaba75489ea3449b23237fc2eca3a5fe\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2f970b675251514d620a1146c7cf05d72b6d4e297c97629ebf94e9970a4396aa\",\"dweb:/ipfs/Qmb99HCEtHdmu64zCygPFdqd9fM1qVWJEDetNwBQEdct8E\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP721/IBEP721Receiver.sol\":{\"keccak256\":\"0xa4dc151e0575e7b4e07ecc64bcfe1f5d6abb852a366e53e3e00f00f29cbc2eea\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://024df7542b13dc53ac19f2bbb07514cae9fb520f393bc3a7508772e2e90c4569\",\"dweb:/ipfs/QmQHUWmcdTLWUYeq2isKca2o5osnKw9wNcn4a9cWbX4dUY\"]}},\"version\":1}",
+    "bytecode": "608060405234801561001057600080fd5b506101af806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c806341982fc814610030575b600080fd5b61004e61003e366004610087565b63083305f960e31b949350505050565b6040516001600160e01b0319909116815260200160405180910390f35b80356001600160a01b038116811461008257600080fd5b919050565b6000806000806080858703121561009d57600080fd5b6100a68561006b565b93506100b46020860161006b565b925060408501359150606085013567ffffffffffffffff808211156100d857600080fd5b818701915087601f8301126100ec57600080fd5b8135818111156100fe576100fe610163565b604051601f8201601f19908116603f0116810190838211818310171561012657610126610163565b816040528281528a602084870101111561013f57600080fd5b82602086016020830137600060208483010152809550505050505092959194509250565b634e487b7160e01b600052604160045260246000fdfea26469706673582212201d8335382c72f69310b9035fbcddd1b26d9bceaceb49970c834d57678ae11d1564736f6c63430008070033",
+    "deployedBytecode": "608060405234801561001057600080fd5b506004361061002b5760003560e01c806341982fc814610030575b600080fd5b61004e61003e366004610087565b63083305f960e31b949350505050565b6040516001600160e01b0319909116815260200160405180910390f35b80356001600160a01b038116811461008257600080fd5b919050565b6000806000806080858703121561009d57600080fd5b6100a68561006b565b93506100b46020860161006b565b925060408501359150606085013567ffffffffffffffff808211156100d857600080fd5b818701915087601f8301126100ec57600080fd5b8135818111156100fe576100fe610163565b604051601f8201601f19908116603f0116810190838211818310171561012657610126610163565b816040528281528a602084870101111561013f57600080fd5b82602086016020830137600060208483010152809550505050505092959194509250565b634e487b7160e01b600052604160045260246000fdfea26469706673582212201d8335382c72f69310b9035fbcddd1b26d9bceaceb49970c834d57678ae11d1564736f6c63430008070033",
+    "sourceMap": "338:364:0:-:0;;;;;;;;;;;;;;;;;;;",
+    "deployedSourceMap": "338:364:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;535:164;;;;;;:::i;:::-;-1:-1:-1;;;535:164:0;;;;;;;;;;-1:-1:-1;;;;;;1497:33:2;;;1479:52;;1467:2;1452:18;535:164:0;;;;;;;14:173:2;82:20;;-1:-1:-1;;;;;131:31:2;;121:42;;111:70;;177:1;174;167:12;111:70;14:173;;;:::o;192:1138::-;287:6;295;303;311;364:3;352:9;343:7;339:23;335:33;332:53;;;381:1;378;371:12;332:53;404:29;423:9;404:29;:::i;:::-;394:39;;452:38;486:2;475:9;471:18;452:38;:::i;:::-;442:48;;537:2;526:9;522:18;509:32;499:42;;592:2;581:9;577:18;564:32;615:18;656:2;648:6;645:14;642:34;;;672:1;669;662:12;642:34;710:6;699:9;695:22;685:32;;755:7;748:4;744:2;740:13;736:27;726:55;;777:1;774;767:12;726:55;813:2;800:16;835:2;831;828:10;825:36;;;841:18;;:::i;:::-;916:2;910:9;884:2;970:13;;-1:-1:-1;;966:22:2;;;990:2;962:31;958:40;946:53;;;1014:18;;;1034:22;;;1011:46;1008:72;;;1060:18;;:::i;:::-;1100:10;1096:2;1089:22;1135:2;1127:6;1120:18;1175:7;1170:2;1165;1161;1157:11;1153:20;1150:33;1147:53;;;1196:1;1193;1186:12;1147:53;1252:2;1247;1243;1239:11;1234:2;1226:6;1222:15;1209:46;1297:1;1292:2;1287;1279:6;1275:15;1271:24;1264:35;1318:6;1308:16;;;;;;;192:1138;;;;;;;:::o;1542:127::-;1603:10;1598:3;1594:20;1591:1;1584:31;1634:4;1631:1;1624:15;1658:4;1655:1;1648:15",
+    "sourcePath": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP721/BEP721Receiver.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.7+commit.e28d00a7"
+    },
+    "ast": {
+        "absolutePath": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP721/BEP721Receiver.sol",
+        "exportedSymbols": {
+            "BEP721Receiver": [
+                26
+            ],
+            "IBEP721Receiver": [
+                44
+            ]
+        },
+        "id": 27,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.8",
+                    ".6"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "34:23:0"
+            },
+            {
+                "absolutePath": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP721/IBEP721Receiver.sol",
+                "file": "./IBEP721Receiver.sol",
+                "id": 2,
+                "nameLocation": "-1:-1:-1",
+                "nodeType": "ImportDirective",
+                "scope": 27,
+                "sourceUnit": 45,
+                "src": "61:31:0",
+                "symbolAliases": [],
+                "unitAlias": ""
+            },
+            {
+                "abstract": false,
+                "baseContracts": [
+                    {
+                        "baseName": {
+                            "id": 4,
+                            "name": "IBEP721Receiver",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 44,
+                            "src": "365:15:0"
+                        },
+                        "id": 5,
+                        "nodeType": "InheritanceSpecifier",
+                        "src": "365:15:0"
+                    }
+                ],
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "documentation": {
+                    "id": 3,
+                    "nodeType": "StructuredDocumentation",
+                    "src": "96:240:0",
+                    "text": " @dev Implementation of the {IERC721Receiver} interface.\n Accepts all token transfers.\n Make sure the contract is able to use its token with {IERC721-safeTransferFrom}, {IERC721-approve} or {IERC721-setApprovalForAll}."
+                },
+                "fullyImplemented": true,
+                "id": 26,
+                "linearizedBaseContracts": [
+                    26,
+                    44
+                ],
+                "name": "BEP721Receiver",
+                "nameLocation": "347:14:0",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "baseFunctions": [
+                            43
+                        ],
+                        "body": {
+                            "id": 24,
+                            "nodeType": "Block",
+                            "src": "643:56:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "expression": {
+                                            "expression": {
+                                                "id": 20,
+                                                "name": "this",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 4294967268,
+                                                "src": "661:4:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_contract$_BEP721Receiver_$26",
+                                                    "typeString": "contract BEP721Receiver"
+                                                }
+                                            },
+                                            "id": 21,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberName": "onBEP721Received",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 25,
+                                            "src": "661:21:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_bytes_memory_ptr_$returns$_t_bytes4_$",
+                                                "typeString": "function (address,address,uint256,bytes memory) external returns (bytes4)"
+                                            }
+                                        },
+                                        "id": 22,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": true,
+                                        "lValueRequested": false,
+                                        "memberName": "selector",
+                                        "nodeType": "MemberAccess",
+                                        "src": "661:30:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bytes4",
+                                            "typeString": "bytes4"
+                                        }
+                                    },
+                                    "functionReturnParameters": 19,
+                                    "id": 23,
+                                    "nodeType": "Return",
+                                    "src": "654:37:0"
+                                }
+                            ]
+                        },
+                        "documentation": {
+                            "id": 6,
+                            "nodeType": "StructuredDocumentation",
+                            "src": "388:141:0",
+                            "text": " @dev See {IERC721Receiver-onERC721Received}.\n Always returns `IERC721Receiver.onERC721Received.selector`."
+                        },
+                        "functionSelector": "41982fc8",
+                        "id": 25,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "onBEP721Received",
+                        "nameLocation": "544:16:0",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": {
+                            "id": 16,
+                            "nodeType": "OverrideSpecifier",
+                            "overrides": [],
+                            "src": "617:8:0"
+                        },
+                        "parameters": {
+                            "id": 15,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 8,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 25,
+                                    "src": "561:7:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    },
+                                    "typeName": {
+                                        "id": 7,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "561:7:0",
+                                        "stateMutability": "nonpayable",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 10,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 25,
+                                    "src": "570:7:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    },
+                                    "typeName": {
+                                        "id": 9,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "570:7:0",
+                                        "stateMutability": "nonpayable",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 12,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 25,
+                                    "src": "579:7:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 11,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "579:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 14,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 25,
+                                    "src": "588:12:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bytes_memory_ptr",
+                                        "typeString": "bytes"
+                                    },
+                                    "typeName": {
+                                        "id": 13,
+                                        "name": "bytes",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "588:5:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bytes_storage_ptr",
+                                            "typeString": "bytes"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "560:41:0"
+                        },
+                        "returnParameters": {
+                            "id": 19,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 18,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 25,
+                                    "src": "635:6:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bytes4",
+                                        "typeString": "bytes4"
+                                    },
+                                    "typeName": {
+                                        "id": 17,
+                                        "name": "bytes4",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "635:6:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bytes4",
+                                            "typeString": "bytes4"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "634:8:0"
+                        },
+                        "scope": 26,
+                        "src": "535:164:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": true,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 27,
+                "src": "338:364:0",
+                "usedErrors": []
+            }
+        ],
+        "src": "34:668:0"
+    },
+    "functionHashes": {
+        "onBEP721Received(address,address,uint256,bytes)": "41982fc8"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "86200",
+            "executionCost": "135",
+            "totalCost": "86335"
+        },
+        "external": {
+            "onBEP721Received(address,address,uint256,bytes)": "infinite"
+        }
+    }
+}

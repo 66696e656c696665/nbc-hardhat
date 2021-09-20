@@ -1,0 +1,320 @@
+{
+    "contractName": "BEP165",
+    "abi": [
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes4",
+                    "name": "interfaceId",
+                    "type": "bytes4"
+                }
+            ],
+            "name": "supportsInterface",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Implementation of the {IBEP165} interface. Contracts that want to implement BEP165 should inherit from this contract and override {supportsInterface} to check for the additional interface id that will be supported. For example: ```solidity function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId); } ``` Alternatively, {ERC165Storage} provides an easier to use but more expensive implementation.\",\"kind\":\"dev\",\"methods\":{\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP165/BEP165.sol\":\"BEP165\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP165/BEP165.sol\":{\"keccak256\":\"0xdaa440b5844ef941418bfa3dba849d69e013add48ff56431be3053d779e168e6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://85936c9a2b555fc6a3dfd2a2e15f66fdf0d0ca1be8209d5d1dd879fdf9ab67ba\",\"dweb:/ipfs/QmWupHQ8wvUrKCGtMJqFfHAzaENYgT1L1t2TGKLSdW35JQ\"]},\"c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP165/IBEP165.sol\":{\"keccak256\":\"0xaa98e03aa22fe76f918585d4f1a2e14f91a1442d8374462de77cf34dcc02b141\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4a63736c7da0c5fed4ca4979b23e56eb0a3102ffa9665b245aabd23ca908271e\",\"dweb:/ipfs/QmX2LxHbVZZWLgfK3e3f19FyVrKxjVStqvAb4JhtA48qEP\"]}},\"version\":1}",
+    "bytecode": "",
+    "deployedBytecode": "",
+    "sourceMap": "",
+    "deployedSourceMap": "",
+    "sourcePath": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP165/BEP165.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.7+commit.e28d00a7"
+    },
+    "ast": {
+        "absolutePath": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP165/BEP165.sol",
+        "exportedSymbols": {
+            "BEP165": [
+                23
+            ],
+            "IBEP165": [
+                35
+            ]
+        },
+        "id": 24,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.8",
+                    ".6"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "35:23:0"
+            },
+            {
+                "absolutePath": "c:/Users/suwan/OneDrive/Desktop/School Stuff/CODE Uni/BSC/nbc-test-hardhat/contracts/BEP165/IBEP165.sol",
+                "file": "./IBEP165.sol",
+                "id": 2,
+                "nameLocation": "-1:-1:-1",
+                "nodeType": "ImportDirective",
+                "scope": 24,
+                "sourceUnit": 36,
+                "src": "62:23:0",
+                "symbolAliases": [],
+                "unitAlias": ""
+            },
+            {
+                "abstract": true,
+                "baseContracts": [
+                    {
+                        "baseName": {
+                            "id": 4,
+                            "name": "IBEP165",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 35,
+                            "src": "708:7:0"
+                        },
+                        "id": 5,
+                        "nodeType": "InheritanceSpecifier",
+                        "src": "708:7:0"
+                    }
+                ],
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "documentation": {
+                    "id": 3,
+                    "nodeType": "StructuredDocumentation",
+                    "src": "89:589:0",
+                    "text": " @dev Implementation of the {IBEP165} interface.\n Contracts that want to implement BEP165 should inherit from this contract and override {supportsInterface} to check\n for the additional interface id that will be supported. For example:\n ```solidity\n function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\n     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId);\n }\n ```\n Alternatively, {ERC165Storage} provides an easier to use but more expensive implementation."
+                },
+                "fullyImplemented": true,
+                "id": 23,
+                "linearizedBaseContracts": [
+                    23,
+                    35
+                ],
+                "name": "BEP165",
+                "nameLocation": "698:6:0",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "baseFunctions": [
+                            34
+                        ],
+                        "body": {
+                            "id": 21,
+                            "nodeType": "Block",
+                            "src": "878:66:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "commonType": {
+                                            "typeIdentifier": "t_bytes4",
+                                            "typeString": "bytes4"
+                                        },
+                                        "id": 19,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftExpression": {
+                                            "id": 14,
+                                            "name": "interfaceId",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 8,
+                                            "src": "896:11:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bytes4",
+                                                "typeString": "bytes4"
+                                            }
+                                        },
+                                        "nodeType": "BinaryOperation",
+                                        "operator": "==",
+                                        "rightExpression": {
+                                            "expression": {
+                                                "arguments": [
+                                                    {
+                                                        "id": 16,
+                                                        "name": "IBEP165",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 35,
+                                                        "src": "916:7:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_type$_t_contract$_IBEP165_$35_$",
+                                                            "typeString": "type(contract IBEP165)"
+                                                        }
+                                                    }
+                                                ],
+                                                "expression": {
+                                                    "argumentTypes": [
+                                                        {
+                                                            "typeIdentifier": "t_type$_t_contract$_IBEP165_$35_$",
+                                                            "typeString": "type(contract IBEP165)"
+                                                        }
+                                                    ],
+                                                    "id": 15,
+                                                    "name": "type",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 4294967269,
+                                                    "src": "911:4:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_function_metatype_pure$__$returns$__$",
+                                                        "typeString": "function () pure"
+                                                    }
+                                                },
+                                                "id": 17,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "functionCall",
+                                                "lValueRequested": false,
+                                                "names": [],
+                                                "nodeType": "FunctionCall",
+                                                "src": "911:13:0",
+                                                "tryCall": false,
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_magic_meta_type_t_contract$_IBEP165_$35",
+                                                    "typeString": "type(contract IBEP165)"
+                                                }
+                                            },
+                                            "id": 18,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": true,
+                                            "lValueRequested": false,
+                                            "memberName": "interfaceId",
+                                            "nodeType": "MemberAccess",
+                                            "src": "911:25:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bytes4",
+                                                "typeString": "bytes4"
+                                            }
+                                        },
+                                        "src": "896:40:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bool",
+                                            "typeString": "bool"
+                                        }
+                                    },
+                                    "functionReturnParameters": 13,
+                                    "id": 20,
+                                    "nodeType": "Return",
+                                    "src": "889:47:0"
+                                }
+                            ]
+                        },
+                        "documentation": {
+                            "id": 6,
+                            "nodeType": "StructuredDocumentation",
+                            "src": "723:58:0",
+                            "text": " @dev See {IERC165-supportsInterface}."
+                        },
+                        "functionSelector": "01ffc9a7",
+                        "id": 22,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "supportsInterface",
+                        "nameLocation": "796:17:0",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": {
+                            "id": 10,
+                            "nodeType": "OverrideSpecifier",
+                            "overrides": [],
+                            "src": "854:8:0"
+                        },
+                        "parameters": {
+                            "id": 9,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 8,
+                                    "mutability": "mutable",
+                                    "name": "interfaceId",
+                                    "nameLocation": "821:11:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 22,
+                                    "src": "814:18:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bytes4",
+                                        "typeString": "bytes4"
+                                    },
+                                    "typeName": {
+                                        "id": 7,
+                                        "name": "bytes4",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "814:6:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bytes4",
+                                            "typeString": "bytes4"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "813:20:0"
+                        },
+                        "returnParameters": {
+                            "id": 13,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 12,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 22,
+                                    "src": "872:4:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bool",
+                                        "typeString": "bool"
+                                    },
+                                    "typeName": {
+                                        "id": 11,
+                                        "name": "bool",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "872:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bool",
+                                            "typeString": "bool"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "871:6:0"
+                        },
+                        "scope": 23,
+                        "src": "787:157:0",
+                        "stateMutability": "view",
+                        "virtual": true,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 24,
+                "src": "680:267:0",
+                "usedErrors": []
+            }
+        ],
+        "src": "35:912:0"
+    },
+    "functionHashes": {
+        "supportsInterface(bytes4)": "01ffc9a7"
+    },
+    "gasEstimates": null
+}
