@@ -12,7 +12,7 @@ import "../security/AccessControl.sol";
  *
  * @dev NBCoin contract with governance implemented
  */
-contract NBCoin is BEP20("NBCoin Beta", "NBCB") {
+contract NBCoin is BEP20("NBCoin", "NBC") {
     uint256 private totalTokens = 100000000 * 10 ** 18;
     uint256 private cap = 130000000 * 10 ** 18;
 

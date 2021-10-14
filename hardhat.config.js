@@ -1,8 +1,14 @@
 require("@nomiclabs/hardhat-waffle");
-require("@nomiclabs/hardhat-ethers");
-
 const fs = require('fs');
-const privateKey = fs.readFileSync(".secret").toString().trim() || "0123456789";
+const account1 = fs
+.readFileSync(".secret")
+.toString()
+.trim() || "01234567890123456789";
+
+const account2 = fs
+.readFileSync(".secret2")
+.toString()
+.trim() || "01234567890123456789";
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -21,24 +27,24 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  * @type import('hardhat/config').HardhatUserConfig
  */
  module.exports = {
-  defaultNetwork: "mainnet",
+  defaultNetwork: "ganache",
   networks: {
-    localhost: {
-      url: "http://127.0.0.1:8545"
-    },
-    hardhat: {
+    ganache: {
+      url: "HTTP://127.0.0.1:7545",
+      chainId: 1337,
+      accounts: [account1, account2]
     },
     testnet: {
       url: "https://data-seed-prebsc-1-s1.binance.org:8545",
       chainId: 97,
       gasPrice: 20000000000,
-      accounts: {mnemonic: mnemonic}
+      accounts: [account1, account2]
     },
     mainnet: {
       url: "https://bsc-dataseed.binance.org/",
       chainId: 56,
       gasPrice: 20000000000,
-      accounts: [privateKey]
+      accounts: [account1, account2]
     }
   },
   solidity: {
@@ -57,6 +63,6 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
     artifacts: "./artifacts"
   },
   mocha: {
-    timeout: 20000
+    timeout: 0
   }
 };

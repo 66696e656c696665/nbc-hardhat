@@ -19,7 +19,7 @@ abstract contract Crowdsale is Context, ReentrancyGuard, Pausable {
 
     // How many token units a buyer gets per wei.
     // The rate is the conversion between wei and the smallest and indivisible token unit.
-    // So, if you are using a rate of 1 with a BEP20Detailed token with 3 decimals called TOK
+    // So, if you are using a rate of 1 with a token with 3 decimals called TOK
     // 1 wei will give you 1 unit, or 0.001 TOK.
     uint256 private _rate;
 

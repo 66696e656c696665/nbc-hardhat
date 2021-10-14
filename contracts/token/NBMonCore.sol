@@ -64,6 +64,15 @@ contract NBMonCore is BEP721URIStorage, BEP721Enumerable {
          uint256 birthTime;
          // minimum timestamp of when an NBMon is allowed to breed again
          uint256 breedCooldown;
+         // checks if the NBMon is an origin or a wild NBMon
+         bool isOrigin;
+         // checks if an offspring NBMon is a moogle (only achievable by breeding)
+         bool isMoogle;
+         // checks the amount of times it has bred 
+         // Note: since breedCount is an unsigned integer, it will start with 1
+         // so a breedCount of 1 = an actual breed count of 0 or a so-called "virgin"
+         uint8 breedCount;
+
 
      }
 }
